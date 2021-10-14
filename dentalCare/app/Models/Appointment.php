@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
-    use HasFactory;
+  
+    public function scopeBuscarpor($query,$tipo,$buscar){
+        if(($tipo)&&($buscar)){
+            return $query->where($tipo,'LIKE',"%$buscar%");
+        }
+    }
 }

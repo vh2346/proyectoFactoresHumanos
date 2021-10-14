@@ -164,4 +164,38 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Datos del usuario actualizados');
     }
    
+    public function searchCitas(Request $request){
+
+
+            $buscar=$request->get('buscarpor');
+            $tipo=$request->get('tipo');
+            $data=appointment::buscarpor($tipo,$buscar)
+                ->paginate(10);
+                
+                
+
+        return view('admin.showappointment',compact('data'));
+    }
+    public function searchDoctores(Request $request){
+
+
+            $buscar=$request->get('buscarpor');
+            $tipo=$request->get('tipo');
+            $data=doctor::buscarpor($tipo,$buscar)
+                ->paginate(10);
+                
+            
+       return view('admin.showdoctor',compact('data'));
+    }
+    public function searchUsuarios(Request $request){
+
+
+            $buscar=$request->get('buscarpor');
+            $tipo=$request->get('tipo');
+            $data=user::buscarpor($tipo,$buscar)
+                ->paginate(10);
+                
+
+        return view('admin.showuser',compact('data'));
+    }
 }

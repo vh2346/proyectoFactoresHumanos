@@ -63,4 +63,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function scopeBuscarpor($query,$tipo,$buscar){
+        if(($tipo)&&($buscar)){
+            return $query->where($tipo,'LIKE',"%$buscar%");
+        }
+    }
 }

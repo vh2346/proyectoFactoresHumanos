@@ -43,6 +43,25 @@
         <div align="center" style="padding-left:20px;">
         <h1 class="fw-bolder" style="padding-top: 40px;">Doctores Registrados</h1>
         <h1 class="fw-bolder" style="padding-top: 20px;"></h1>
+        <div class="float-right">
+            <form class="form-inline"action="{{url('/searchDoctores')}}" method="GET" align="center">
+              @csrf
+
+              <select name="tipo" class="form-control mr-sm-2" id="exampleFormControlSelect1">
+                <option>Buscar por tipo</option>
+                <option>Nombre</option>
+                <option>Apellido</option>
+                <option>identificacion</option>
+                <option>Email</option>
+                <option>Especialidad</option>
+              </select> 
+              <input type="text" name="buscarpor" style="color:blue;" placeholder="Buscar">
+          
+              <input type="submit" value="Buscar" class="btn btn-success">
+
+            </form>  
+            <br>
+</div>
             <table>
                 <tr style="background-color:#1453A6;" align="center">
                     <th style="padding:7px; font-size:13px; color:white;">Nombre Doctor</th>

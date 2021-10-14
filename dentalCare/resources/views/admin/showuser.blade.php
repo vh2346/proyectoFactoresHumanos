@@ -40,9 +40,29 @@
       <!-- partial:partials/_sidebar.html -->
       @include('admin.side')
       <div class="container-fluid page-body-wrapper">
-        <div align="center" style="padding-left:20px;">
+        <div align="center" style="padding-left:100px;">
         <h1 class="fw-bolder" style="padding-top: 40px;">Usuarios Registrados</h1>
         <h1 class="fw-bolder" style="padding-top: 20px;"></h1>
+        <div class="float-right" padding-bottom="20px">
+            <form class="form-inline"action="{{url('/searchUsuarios')}}" method="GET" align="center">
+              @csrf
+
+              <select name="tipo" class="form-control mr-sm-2" id="exampleFormControlSelect1">
+                <option>Buscar por tipo</option>
+                <option>Nombre</option>
+                <option>Apellido</option>
+                <option>Identificacion</option>
+                <option>Edad</option>
+                <option>Email</option>
+               
+              </select> 
+              <input type="text" name="buscarpor" style="color:blue;" placeholder="Buscar">
+          
+              <input type="submit" value="Buscar" class="btn btn-success">
+
+            </form>  
+            <br>
+</div>
             <table>
                 <tr style="background-color:#1453A6;" align="center">
                     <th style="padding:7px; font-size:13px; color:white;">Nombre Usuario</th>

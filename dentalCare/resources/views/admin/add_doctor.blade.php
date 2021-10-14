@@ -97,7 +97,7 @@
            <div style="padding:15px;">
               <label>Horario de atención</label>
               <select name="horario" style="color:black; width: 200px;">
-                 <option value="9:00am">Seleccione el horario</option>
+                <option value="9:00am">Seleccione el horario</option>
                 <option value="9:00am">9:00am</option>
                 <option value="10:00am">10:00am</option>
                 <option value="11:00am">11:00am</option>

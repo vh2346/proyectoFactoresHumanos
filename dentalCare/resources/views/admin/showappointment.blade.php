@@ -48,12 +48,28 @@
         <h1 class="fw-bolder" style="padding-top: 40px;">Citas agendadas</h1>
         
         <h1 class="fw-bolder" style="padding-top: 20px;"></h1>
-            <form action="showappointment" method="GET" align="center">     
-              <input type="text" name="search_text">
-              <input type="submit" name="search" value="search">
-            </form> 
+           
+            <div class="float-right">
+            <form class="form-inline"action="{{url('/searchCitas')}}" method="GET" align="center">
+              @csrf
+
+              <select name="tipo" class="form-control mr-sm-2" id="exampleFormControlSelect1">
+                <option>Buscar por tipo</option>
+                <option>Nombre</option>
+                <option>Apellido</option>
+                <option>identificacion</option>
+                <option>Email</option>
+                <option>Fecha</option>
+                <option>Doctor</option>
+              </select> 
+              <input type="text" name="buscarpor" style="color:blue;" placeholder="Buscar">
+          
+              <input type="submit" value="Buscar" class="btn btn-success">
+
+            </form>  
             <br>
-        
+</div>
+
             <table>
                 <tr style="background-color:#1453A6;" align="center">
                     <th style="padding:7px; font-size:13px; color:white;">Nombre Paciente</th>

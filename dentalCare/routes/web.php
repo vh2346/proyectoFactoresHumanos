@@ -44,3 +44,7 @@ Route::post('/edituser/{id}',[AdminController::class,'edituser']);
 Route::get('/add_user_view',[AdminController::class,'add_user_view']);
 
 Route::post('/upload_user',[AdminController::class,'upload_user']);
+Route::get('/searchCitas',[AdminController::class,'searchCitas']);
+Route::get('/searchDoctores',[AdminController::class,'searchDoctores']);
+Route::get('/searchUsuarios',[AdminController::class,'searchUsuarios']);
+
