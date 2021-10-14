@@ -47,7 +47,7 @@
         </div> <!-- .row -->
       </div> <!-- .container -->
     </div> <!-- .topbar -->
-    <a class="navbar-brand"  href="home"><img height = 100 weight=100 src="admin/images/DENTALCARE.png" alt="logo" style="
+    <a class="navbar-brand"  href="home"><img  src="admin/images/DENTALCARE.png" alt="logo" style="
     padding-left: 300px;" ></a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
