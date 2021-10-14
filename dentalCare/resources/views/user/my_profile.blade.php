@@ -26,7 +26,7 @@
   <div class="back-to-top"></div>
 
   <header>
-    <div class="topbar">
+  <div class="topbar">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-sm">
@@ -48,7 +48,7 @@
       </div> <!-- .container -->
     </div> <!-- .topbar -->
     <a class="navbar-brand"  href="home"><img height = 100 weight=100 src="admin/images/DENTALCARE.png" alt="logo" style="
-    padding-left: 300px;" ></a>
+    padding-left: 300px;" align="center"></a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -64,12 +64,14 @@
               <a class="nav-link" style="background-color:#1453A6; color: white;" href="home">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="background-color:#1453A6; color: white;" href="about.html">Acerca de nosotros</a>
+              <a class="nav-link" style="background-color:#1453A6; color: white;"href="about.html">Acerca de nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="background-color:#1453A6; color: white;" href="doctors.html">Doctores</a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" style="background-color:#1453A6; color: white;" href="blog.html">Noticias</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" style="background-color:#1453A6; color: white;" href="contact.html">Contacto</a>
             </li>
@@ -103,111 +105,42 @@
     
   </header>
   
-  @if(session()->has('message'))
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">
-            x
-          </button>
-          {{session()->get('message')}}
-        </div>
-        @endif
+    <div align="center" style="padding:70px;">
+    <table>
+                <tr style="background-color:#1453A6;" align="center">
+                    <th style="padding:7px; font-size:13px; color:white;">Nombre Usuario</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Apellido Usuario</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Identificacion</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Edad</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Email</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Teléfono</th>
+                    <th style="padding:7px; font-size:13px; color:white;">Direccion</th>
+                
+                    <th style="padding:7px; font-size:13px; color:white;">Actualizar</th>
 
+  
 
+                    
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
-    <div class="hero-section">
-      <div class="container text-center wow zoomIn">
-        <span class="subhead">Hacemos de tu sonrisa algo mejor</span>
-        <h1 class="display-4">Cuida tu salud oral</h1>
-        <a href="{{route('login')}}" class="btn btn-primary">Agendar una cita médica</a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="bg-light">
-   
-    </div> <!-- .page-section -->
-
-    <div class="page-section pb-0">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>Bienvenido a DentalCare Clinic<br> </h1>
-            <p class="text-grey mb-4">Nos ocupamos de tu sonrisa cuidando muy de cerca tu salud oral. Notarás resultados estéticos y funcionales hechos por profesionales altamente calificados, de la mano del Dr. Francisco Zuluaga, experto con mas de 35 años de experiencia. Por eso somos odontologia de verdad™.</p>
-            <a href="about.html" class="btn btn-primary">Leer más</a>
-          </div>
-          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
-            <div class="img-place custom-img-1">
-              <img src="../assets/img/bg-doctor.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- .bg-light -->
-  </div> <!-- .bg-light -->
-
- 
-@include('user.doctor')
-
-
-@include('user.latest')  
-
-@include('user.appointment')
-
-  <!-- .banner-home -->
-
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row px-md-3">
-        <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Company</h5>
-          <ul class="footer-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Editorial Team</a></li>
-            <li><a href="#">Protection</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-3 py-3">
-          <h5>More</h5>
-          <ul class="footer-menu">
-            <li><a href="#">Terms & Condition</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Join as Doctors</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Our partner</h5>
-          <ul class="footer-menu">
-            <li><a href="#">One-Fitness</a></li>
-            <li><a href="#">One-Drugs</a></li>
-            <li><a href="#">One-Live</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Contact</h5>
-          <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-          <a href="#" class="footer-link">701-573-7582</a>
-          <a href="#" class="footer-link">healthcare@temporary.net</a>
-
-          <h5 class="mt-3">Social Media</h5>
-          <div class="footer-sosmed mt-3">
-            <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
-            <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
-    </div>
-  </footer>
+                </tr>   
+                  @foreach($user as $users)
+                  <tr style="background-color:#BFD1D9;">
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->nombre}}</td>
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->apellido}}</td>
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->identificacion}}</td>
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->edad}}</td>
+                    <td style="padding:7px; font-size:12px;  color:black;">{{$users->email}}</td>
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->telefono}}</td>
+                    <td style="padding:7px; font-size:12px; color:black;">{{$users->direccion}}</td> 
+                    
+                    <td>
+                    <a class="btn btn-primary btn-sm" href="{{url('update_profile',$users->id)}}">Actualizar</a>
+                    </td>
+                    
+                 </tr>
+            @endforeach
+    </table> 
+    </div>    
 
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
