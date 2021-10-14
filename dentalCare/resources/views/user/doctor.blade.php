@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="body">
-              <p class="text-xl mb-0">{{$doctors->nombre}}</p>
+              <p class="text-xl mb-0">{{$doctors->nombre}}-{{$doctors->apellido}}</p>
               <span class="text-sm text-grey">{{$doctors->especialidad}}</span>
             </div>
           </div>

@@ -90,6 +90,43 @@ class HomeController extends Controller
         $data->delete();
         return redirect()->back();
     }
+    public function myprofile()
+    {
+        if(Auth::id())
 
+        {
+            $id=Auth::user()->id;
+            $user=user::where('id',$id)->get();
+            return view('user.my_profile',compact('user'));
+        }
+        else
+        {
+            return redirect()->back();
+        }
+        
+    }
    
+    public function update_profile($id)
+    {
+        $data=user::find($id);
+        return view('user.update_user',compact('data'));
+    }
+
+    public function edit_profile(Request $request , $id)
+    {
+        $user=user::find($id);
+        $user->nombre=$request->nombre;
+        $user->apellido=$request->apellido;
+        $user->identificacion=$request->identificacion;
+        $user->edad=$request->edad;
+        $user->email=$request->email;
+        $user->telefono=$request->telefono;
+        $user->direccion=$request->direccion;
+       
+
+       
+        $user->save();
+
+        return redirect()->back()->with('message','Datos del usuario actualizados');
+    }
 }

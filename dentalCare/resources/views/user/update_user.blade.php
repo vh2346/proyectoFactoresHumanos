@@ -47,8 +47,8 @@
         </div> <!-- .row -->
       </div> <!-- .container -->
     </div> <!-- .topbar -->
-    <a class="navbar-brand"  href="home"><img height = 100 weight=100 src="admin/images/DENTALCARE.png" alt="logo" style="
-    padding-left: 300px;" ></a>
+    <a class="navbar-brand"  href="/home"><img height = 100 weight=100 src="/admin/images/DENTALCARE.png" alt="logo" style="
+    padding-left: 300px;" align="center"></a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -61,9 +61,9 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" style="background-color:#1453A6; color: white;" href="home">Inicio</a>
+              <a class="nav-link" style="background-color:#1453A6; color: white;" href="/home">Inicio</a>
             </li>
-            
+           
             @if(Route::has('login'))
             @auth
             <li class="nav-item">
@@ -94,32 +94,77 @@
     
   </header>
   
+  
     <div align="center" style="padding:70px;">
-        <table>
-        <tr style="background-color:#1453A6;" align="center">
-                <th   style="padding:7px; font-size:13px; color:white;"Nombre del Doctor</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Especialidad</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Fecha</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Horario</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Mensaje</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Estado</th>
-                <th  style="padding:7px; font-size:13px; color:white;">Acción</th>
-            </tr>  
-            @foreach($appoint as $appoints)
-            <tr style="background-color:#BFD1D9;">
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->doctor}}</td>
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->especialidad}}</td>
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->fecha}}</td>
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->horario}}</td>
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->mensaje}}</td>
-                <td style="padding:7px; font-size:12px; color:black;">{{$appoints->estado}}</td>
-                <td><a class="btn btn-danger" onclick="return confirm('Estás seguro de eliminar la cita?')" href="{{url('cancel_appoint',$appoints->id)}}">Cancelar</a></td>
-            </tr>
-            @endforeach
-    </table> 
+    <div class="container" align="center" style="padding:top 100px;">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">
+                x
+            </button>
+            {{session()->get('message')}}
+            </div>
+            @endif
+        <h1 class="fw-bolder" style="padding-top: 60px;">Editar información del usuario</h1>
+        <h1 class="fw-bolder" style="padding-top: 20px;"></h1>
+        <form action="{{url('edit_profile',$data->id)}}" method="POST" enctype="multipart/form-data">
+                
+                @csrf
+
+                <div  style="padding:15px;">
+                    <label for="disabledTextInput">Nombre del Usuario</label>
+                    <input type="text"  id="disabledTextInput"  style="background-color:gray;" name="nombre" value="{{$data->nombre}}" readonly>
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Apellido del Usuario</label>
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="apellido" value="{{$data->apellido}}" readonly>
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Identificacion</label>
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="identificacion" value="{{$data->identificacion}}"readonly>
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Edad</label>
+                    <input type="text" style="color:black;" name="edad" value="{{$data->edad}}">
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Email</label>
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="email" value="{{$data->email}}" readonly>
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Teléfono</label>
+                    <input type="text" style="color:black;" name="telefono" value="{{$data->telefono}}">
+                    
+        
+                </div>
+                <div style="padding:15px;">
+                    <label>Direccion</label>
+                    <input type="text" style="color:black;" name="direccion" value="{{$data->direccion}}">
+                    
+        
+                </div>
+                
+                <div style="padding:15px;">
+                <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Enviar</button>
+                </div>
+                
+
+            
+            </form>
+        </div>   
     </div>    
 
-<script src="../assets/js/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
