@@ -58,11 +58,15 @@ class HomeController extends Controller
         $data->telefono=$request->telefono;
         $data->mensaje=$request->mensaje;
         $data->estado='En curso';
-
         if(Auth::id())
         {
             $data->user_id=Auth::user()->id;
         }
+        if (appointment::where('horario', $request->horario)->exists()) {
+            return redirect()->back()->with('message','Horario no disponible');
+        }
+
+       
 
         $data->save();
 
