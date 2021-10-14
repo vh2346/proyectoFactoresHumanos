@@ -63,18 +63,7 @@
             <li class="nav-item active">
               <a class="nav-link" style="background-color:#1453A6; color: white;" href="home">Inicio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" style="background-color:#1453A6; color: white;"href="about.html">Acerca de nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="background-color:#1453A6; color: white;" href="doctors.html">Doctores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="background-color:#1453A6; color: white;" href="blog.html">Noticias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="background-color:#1453A6; color: white;" href="contact.html">Contacto</a>
-            </li>
+           
             @if(Route::has('login'))
             @auth
             <li class="nav-item">

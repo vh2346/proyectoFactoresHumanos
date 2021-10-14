@@ -47,7 +47,7 @@
         </div> <!-- .row -->
       </div> <!-- .container -->
     </div> <!-- .topbar -->
-    <a class="navbar-brand"  href="home"><img height = 100 weight=100 src="admin/images/DENTALCARE.png" alt="logo" style="
+    <a class="navbar-brand"  href="/home"><img height = 100 weight=100 src="/admin/images/DENTALCARE.png" alt="logo" style="
     padding-left: 300px;" align="center"></a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,20 +61,9 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link" style="background-color:#1453A6; color: white;" href="/home">Inicio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Acerca de nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Noticias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacto</a>
-            </li>
+           
             @if(Route::has('login'))
             @auth
             <li class="nav-item">
@@ -105,6 +94,7 @@
     
   </header>
   
+  
     <div align="center" style="padding:70px;">
     <div class="container" align="center" style="padding:top 100px;">
             @if(session()->has('message'))
@@ -117,25 +107,25 @@
             @endif
         <h1 class="fw-bolder" style="padding-top: 60px;">Editar información del usuario</h1>
         <h1 class="fw-bolder" style="padding-top: 20px;"></h1>
-        <form action="{{url('edituser',$data->id)}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('edit_profile',$data->id)}}" method="POST" enctype="multipart/form-data">
                 
                 @csrf
 
                 <div  style="padding:15px;">
-                    <label>Nombre del Usuario</label>
-                    <input type="text"  style="color:black;" name="nombre" value="{{$data->nombre}}">
+                    <label for="disabledTextInput">Nombre del Usuario</label>
+                    <input type="text"  id="disabledTextInput"  style="background-color:gray;" name="nombre" value="{{$data->nombre}}" readonly>
                     
         
                 </div>
                 <div style="padding:15px;">
                     <label>Apellido del Usuario</label>
-                    <input type="text" style="color:black;" name="apellido" value="{{$data->apellido}}">
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="apellido" value="{{$data->apellido}}" readonly>
                     
         
                 </div>
                 <div style="padding:15px;">
                     <label>Identificacion</label>
-                    <input type="text" style="color:black;" name="identificacion" value="{{$data->identificacion}}">
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="identificacion" value="{{$data->identificacion}}"readonly>
                     
         
                 </div>
@@ -147,7 +137,7 @@
                 </div>
                 <div style="padding:15px;">
                     <label>Email</label>
-                    <input type="text" style="color:black;" name="email" value="{{$data->email}}">
+                    <input type="text" id="disabledTextInput"  style="background-color:gray;" name="email" value="{{$data->email}}" readonly>
                     
         
                 </div>
@@ -165,7 +155,7 @@
                 </div>
                 
                 <div style="padding:15px;">
-                    <input type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Enviar</button>
                 </div>
                 
 
@@ -174,7 +164,7 @@
         </div>   
     </div>    
 
-<script src="../assets/js/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
